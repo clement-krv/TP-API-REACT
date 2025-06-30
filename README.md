@@ -10,21 +10,28 @@ Ce projet a été développé dans un cadre d'apprentissage pour maîtriser les 
 - Appels API et gestion des données asynchrones
 - Composants réutilisables
 - Pagination et filtrage
-- Modales et interactions utilisateur
+- Modales et interactions utilisateur (remplacées par navigation)
 - Optimisation des performances (debounce, useMemo)
+- Navigation SPA avec React Router
 
 ## ✨ Fonctionnalités
 
-### 📄 Articles
+### � Navigation (React Router v7)
+- **Route principale** : `/` - Liste des articles avec pagination et recherche
+- **Route détail** : `/post/:id` - Page dédiée pour chaque article avec commentaires
+- **Navigation fluide** : Boutons "En savoir plus" et "Retour aux articles"
+
+### �📄 Articles
 - **Affichage** : Liste paginée des articles récupérés depuis l'API
 - **Recherche** : Barre de recherche avec debounce (300ms) pour filtrer par titre
 - **Pagination** : Navigation par pages avec 10 articles par page
+- **Détail** : Page dédiée pour chaque article avec contenu complet
 
 ### 💬 Commentaires
-- **Bouton commentaire** : Icône avec nombre de commentaires sur chaque article
-- **Modal interactive** : Affichage élégant de l'article complet + commentaires
-- **Design moderne** : Header sticky, animations fluides, avatars colorés
-- **UX optimisée** : Fermeture au clic extérieur, indicateur de chargement
+- **Affichage intégré** : Commentaires affichés directement sous l'article sur sa page dédiée
+- **Design moderne** : Avatars colorés, numérotation, layout responsive
+- **Chargement optimisé** : États de chargement séparés pour article et commentaires
+- **UX améliorée** : Plus de modal, navigation claire entre pages
 
 ### 🎨 Interface
 - **Design responsive** : Interface adaptée à tous les écrans
@@ -35,6 +42,7 @@ Ce projet a été développé dans un cadre d'apprentissage pour maîtriser les 
 ## 🛠️ Technologies Utilisées
 
 - **React 18** - Bibliothèque JavaScript pour l'interface utilisateur
+- **React Router v7** - Navigation et routing côté client (SPA)
 - **Vite** - Outil de build rapide et serveur de développement
 - **Tailwind CSS** - Framework CSS utility-first
 - **JSONPlaceholder** - API REST fictive pour les données de test
@@ -72,29 +80,29 @@ npm run lint     # Vérification ESLint
 
 ```
 src/
-├── App.jsx              # Composant principal
+├── App.jsx              # Composant principal avec routes
 ├── main.jsx            # Point d'entrée React
-├── components/
-│   ├── PostList.jsx    # Liste des articles
-│   ├── SearchBar.jsx   # Barre de recherche
-│   ├── Pagination.jsx  # Navigation par pages
-│   └── CommentModal.jsx # Modal des commentaires
+├── Posts.jsx           # Page d'accueil - Liste des articles
+├── PostDetail.jsx      # Page détail d'un article + commentaires
+├── SearchBar.jsx       # Barre de recherche
+├── Pagination.jsx      # Navigation par pages
 └── assets/             # Ressources statiques
 ```
 
 ## 🎓 Concepts React Abordés
 
 ### Hooks Utilisés
-- **useState** : Gestion d'état local (articles, recherche, pagination, modal)
-- **useEffect** : Appels API, effets de bord, nettoyage d'événements
+- **useState** : Gestion d'état local (articles, recherche, pagination, chargement)
+- **useEffect** : Appels API, effets de bord, synchronisation avec l'ID de l'article
 - **useMemo** : Optimisation du filtrage des articles
-- **useRef** : Référence DOM pour la modal
+- **useParams** : Récupération des paramètres d'URL (ID de l'article)
 
 ### Patterns Implémentés
 - **Custom Hook** : `useDebounce` pour optimiser la recherche
 - **Composants contrôlés** : Input de recherche avec valeur et onChange
-- **Props drilling** : Passage de données entre composants
+- **Routing SPA** : Navigation sans rechargement de page
 - **Conditional rendering** : Affichage conditionnel selon l'état
+- **Code splitting** : Séparation des composants par responsabilité
 
 ### Bonnes Pratiques
 - **Séparation des responsabilités** : Un composant = une responsabilité
@@ -115,10 +123,21 @@ src/
 ✅ **Lifecycle** : useEffect, montage/démontage  
 ✅ **API Calls** : fetch, gestion async/await  
 ✅ **State Management** : États multiples, synchronisation  
+✅ **Routing** : React Router v7, navigation SPA  
 ✅ **Performance** : Optimisations, re-renders  
 ✅ **UX/UI** : Interactions, animations, responsive  
 ✅ **Code Quality** : Structure, lisibilité, réutilisabilité  
 
+## 🔄 Améliorations Possibles
+
+- [ ] Context API pour la gestion d'état globale
+- [ ] React Query pour la mise en cache des données
+- [ ] Tests unitaires avec Jest/React Testing Library
+- [ ] Breadcrumb navigation pour améliorer l'UX
+- [ ] Formulaire d'ajout de commentaires
+- [ ] Mode sombre/clair
+- [ ] PWA (Progressive Web App)
+- [ ] Lazy loading des composants
 
 ---
 
