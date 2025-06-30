@@ -128,17 +128,6 @@ src/
 ✅ **UX/UI** : Interactions, animations, responsive  
 ✅ **Code Quality** : Structure, lisibilité, réutilisabilité  
 
-## 🔄 Améliorations Possibles
-
-- [ ] Context API pour la gestion d'état globale
-- [ ] React Query pour la mise en cache des données
-- [ ] Tests unitaires avec Jest/React Testing Library
-- [ ] Breadcrumb navigation pour améliorer l'UX
-- [ ] Formulaire d'ajout de commentaires
-- [ ] Mode sombre/clair
-- [ ] PWA (Progressive Web App)
-- [ ] Lazy loading des composants
-
 ---
 
 > 💡 **Note** : Ce projet est réalisé dans un contexte pédagogique pour l'apprentissage de React et des bonnes pratiques de développement frontend moderne.
