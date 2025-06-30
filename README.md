@@ -48,7 +48,7 @@ Ce projet a été développé dans un cadre d'apprentissage pour maîtriser les 
 ### Installation
 ```bash
 # Cloner le projet
-git clone [url-du-repo]
+git clone https://github.com/clement-krv/TP-API-REACT
 cd TP-API
 
 # Installer les dépendances
