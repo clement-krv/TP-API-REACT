@@ -99,7 +99,6 @@ const Login = () => {
                 <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
               )}
             </div>
-            
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Mot de passe
