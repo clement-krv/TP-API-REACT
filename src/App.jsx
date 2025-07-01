@@ -1,19 +1,36 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import Posts from "./Posts";
-import PostDetail from "./PostDetail";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { UserProvider } from "./contexts/UserContext";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Post from "./pages/Post";
+import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Page liste des articles sur la home */}
-        <Route path="/" element={<Posts />} />
-        
-        {/* Page détail d'un article */}
-        <Route path="/post/:id" element={<PostDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-gray-50">
+          <Header />
+          <main>
+            <Routes>
+              {/* Page liste des articles sur la home */}
+              <Route path="/" element={<Home />} />
+              
+              {/* Page détail d'un article */}
+              <Route path="/post/:id" element={<Post />} />
+              
+              {/* Page de connexion */}
+              <Route path="/login" element={<Login />} />
+              
+              {/* Page de réinitialisation de mot de passe */}
+              <Route path="/reset-password" element={<ResetPassword />} />
+            </Routes>
+          </main>
+        </div>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
